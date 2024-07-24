@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yenul Insara's Personal Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            background: linear-gradient(45deg, #ef0707, #1202f6);
+        }
+        header {
+            padding: 0;
+            text-align: center;
+            color: #ffffff;
+        }
+        header img {
+            width: 80%;
+            height: auto;
+            border-radius: 8px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(45deg, #072aef, #b305db);
+            padding: 10px;
+        }
+        nav a {
+            margin: 0 15px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        nav a.active {
+            font-weight: bold;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section {
+            display: none;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: rgb(0, 0, 0);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .section.active {
+            display: block;
+        }
+        h1, h2 {
+            color: #ffffff;
+        }
+        .contact-info {
+            font-size: 18px;
+        }
+        .contact-info a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        footer {
+            background: linear-gradient(45deg, #072aef, #b305db);
+            padding: 5px;
+            text-align: center;
+            color: #000000;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .qr-code {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .qr-code img {
+            max-width: 200px;
+            height: auto;
+        }
+        .blog-form {
+            margin-top: 20px;
+        }
+        .blog-form textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            resize: vertical;
+        }
+        .blog-form button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #b305db;
+            color: #ffffff;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .chat-box {
+            margin-top: 20px;
+        }
+        .chat-box input, .chat-box button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .chat-box input {
+            margin-bottom: 10px;
+        }
+        .chat-box button {
+            background: #b305db;
+            color: #ffffff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Green and White LinkedIn Header.png" alt="Header Image">
+    </header>
+    <nav>
+        <a href="#about" class="active" onclick="showSection('about')">About Me</a>
+        <a href="#contact" onclick="showSection('contact')">Contact Information</a>
+        <a href="#blog" onclick="showSection('blog')">Personal Blog</a>
+    </nav>
+    <div class="container">
+        <section id="about" class="section active">
+            <h2>About Me</h2>
+            <ul>
+                <li>Hello! I'm Yenul Insara.</li>
+                <li>Welcome to my personal webpage.</li>
+                <li>I'm a grade 10 student.</li>
+                <li>I live in Baduraliya.</li>
+                <li>My school is C.W.W. Kannangara Central College</li>
+                <li>I'm a Scout lover & Announcer.</li>
+            </ul>
+        </section>
+        <section id="contact" class="section">
+            <h2>Contact Information</h2>
+            <p class="contact-info">Email: <a href="mailto:yenulinsara02@gmail.com">yenulinsara02@gmail.com</a></p>
+            <p class="contact-info">Phone: <a href="tel:+947220169">+947220169</a></p>
+            <p class="contact-info">Instagram: <a href="https://www.instagram.com/mr.yenul_inz_/" target="_blank">@mr.yenul_inz_</a></p>
+            <div class="qr-code">
+                <img src="mr.yenul_inz__qr (1).png" alt="Instagram QR Code">
+            </div>
+        </section>
+        <section id="blog" class="section">
+            <h2>Personal Blog</h2>
+            <p>Welcome to my personal blog. Here, I share my thoughts, experiences, and stories. Stay tuned for updates!</p>
+            <div class="blog-form">
+                <h3>Write a Blog Post</h3>
+                <form>
+                    <textarea placeholder="Write your blog post here..."></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="chat-box">
+                <h3>Chat with Me</h3>
+                <form>
+                    <input type="text" placeholder="Enter your message...">
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Yenul Insara. All rights reserved.</p>
+    </footer>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+            
+            document.querySelectorAll('nav a').forEach(navLink => {
+                navLink.classList.remove('active');
+            });
+            document.querySelector(`nav a[href="#${sectionId}"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
